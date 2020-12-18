@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'Kaushan Script';
+    font-display: swap;
+    src: url(../fonts/Kaushan_Script/AnyConv.com__KaushanScript-Regular.woff2) format('woff2'),
+    url(../fonts/Kaushan_Script/AnyConv.com__KaushanScript-Regular.woff) format('woff'),
+    url(../fonts/Kaushan_Script/KaushanScript-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-display: swap;
+    src: url(../fonts/Montserrat/Montserrat-Bold.woff2) format('woff2'),
+    url(../fonts/Montserrat/Montserrat-Bold.woff) format('woff'),
+    url(../fonts/Montserrat/Montserrat-Bold.ttf) format('truetype');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-display: swap;
+    src: url(../fonts/Montserrat/Montserrat-Regular.woff2) format('woff2'),
+    url(../fonts/Montserrat/Montserrat-Regular.woff) format('woff'),
+    url(../fonts/Montserrat/Montserrat-Regular.ttf) format('truetype');
+    font-weight: 400;
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6;
+}
+
+*, 
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+/* intro */
+.intro {
+    width: 100%;
+    height: 100vh;
+    background: url("../images/intro.jpg") center no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* Header */
+.header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header_logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Nav */
+.nav {
+    text-transform: uppercase;
+    font-size: 14px;
+
+}
+
+.nav_link {
+    color: #fff;
+    text-decoration: none;
+}

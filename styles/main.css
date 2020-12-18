@@ -1,27 +1,22 @@
 @font-face {
     font-family: 'Kaushan Script';
     font-display: swap;
-    src: url(../fonts/Kaushan_Script/AnyConv.com__KaushanScript-Regular.woff2) format('woff2'),
-    url(../fonts/Kaushan_Script/AnyConv.com__KaushanScript-Regular.woff) format('woff'),
-    url(../fonts/Kaushan_Script/KaushanScript-Regular.ttf) format('truetype');
-}
-@font-face {
-    font-family: 'Montserrat';
-    font-display: swap;
-    src: url(../fonts/Montserrat/Montserrat-Bold.woff2) format('woff2'),
-    url(../fonts/Montserrat/Montserrat-Bold.woff) format('woff'),
-    url(../fonts/Montserrat/Montserrat-Bold.ttf) format('truetype');
-    font-weight: 700;
-}
-@font-face {
-    font-family: 'Montserrat';
-    font-display: swap;
-    src: url(../fonts/Montserrat/Montserrat-Regular.woff2) format('woff2'),
-    url(../fonts/Montserrat/Montserrat-Regular.woff) format('woff'),
-    url(../fonts/Montserrat/Montserrat-Regular.ttf) format('truetype');
-    font-weight: 400;
+    src: url(../fonts/Kaushan_Script/AnyConv.com__KaushanScript-Regular.woff2) format('woff2'), url(../fonts/Kaushan_Script/AnyConv.com__KaushanScript-Regular.woff) format('woff'), url(../fonts/Kaushan_Script/KaushanScript-Regular.ttf) format('truetype');
 }
 
+@font-face {
+    font-family: 'Montserrat';
+    font-display: swap;
+    src: url(../fonts/Montserrat/Montserrat-Bold.woff2) format('woff2'), url(../fonts/Montserrat/Montserrat-Bold.woff) format('woff'), url(../fonts/Montserrat/Montserrat-Bold.ttf) format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-display: swap;
+    src: url(../fonts/Montserrat/Montserrat-Regular.woff2) format('woff2'), url(../fonts/Montserrat/Montserrat-Regular.woff) format('woff'), url(../fonts/Montserrat/Montserrat-Regular.ttf) format('truetype');
+    font-weight: 400;
+}
 
 body {
     margin: 0;
@@ -31,39 +26,93 @@ body {
     line-height: 1.6;
 }
 
-*, 
+*,
 *:before,
 *:after {
     box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
 }
 
+
 /* intro */
+
 .intro {
     width: 100%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: url("../images/intro.jpg") center no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
 }
 
+.intro-inner {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro-suptitle {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 72px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.intro-title {
+    color: #fff;
+    font-size: 150px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+}
+
+.intro-title:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #fff;
+    margin: 60px auto;
+}
+
+
 /* Container */
+
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
+
+
 /* Header */
+
 .header {
     width: 100%;
+    padding-top: 30px;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
+}
+
+.header_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header_logo {
@@ -72,14 +121,117 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
 }
 
+
 /* Nav */
+
 .nav {
     text-transform: uppercase;
     font-size: 14px;
-
 }
 
 .nav_link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 15px;
+    position: relative;
     color: #fff;
     text-decoration: none;
+    transition: color .1s linear;
+    /* придает плавный переход цвета */
+}
+
+.nav_link:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    opacity: 0;
+    background-color: #fce38a;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    transition: opacity .1s linear;
+}
+
+.nav_link:hover {
+    color: #fce38a;
+}
+
+.nav_link:hover:after,
+.nav_link.active:after {
+    opacity: 1;
+}
+
+.nav_link.active {
+    color: #fce38a;
+}
+
+
+/* Button */
+
+.btn {
+    display: inline-block;
+    vertical-align: top;
+    padding: 12px 30px;
+    border: 3px solid #fff;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background .2s linear, color .2s linear;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+
+/* Slider */
+
+.slider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+.slider_inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider-item {
+    width: 23%;
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    opacity: 0.7;
+    padding: 20px 0;
+    border-top: 3px solid #fff;
+    position: relative;
+}
+
+.slider-num {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.slider-item.active {
+    opacity: 1;
+}
+
+.slider-item.active:before {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background-color: #f38181;
+    position: absolute;
+    top: -3px;
+    left: 0;
+    z-index: 1;
 }
